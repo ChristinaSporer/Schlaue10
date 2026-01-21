@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart10Spiel WebAssembly</title>
+    <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart10 Quiz</h1>
+        
+        <!-- Start Menu -->
+        <div id="startMenu">
+            <h2>Wähle ein Fragen-Set</h2>
+            <div id="setList"></div>
+            <div class="upload-hint">Oder lade eine eigene JSON-Datei:</div>
+            <div>
+                <button id="uploadBtn" style="padding: 12px 22px; font-weight: 700; border-radius: 10px; border: 2px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); color: #fff; cursor: pointer;">Eigenes Set laden …</button>
+                <input id="uploadInput" type="file" accept="application/json" style="display:none" />
+            </div>
+            <div id="uploadError" class="error-text" style="display:none"></div>
+            
+            <!-- ChatGPT Prompt Section -->
+            <div class="chatgpt-section">
+                <details>
+                    <summary style="cursor: pointer; color: white; font-weight: bold; margin-top: 20px; padding: 12px; background: rgba(255,255,255,0.1); border-radius: 8px; user-select: none;">💡 Set mit ChatGPT erstellen</summary>
+                    <div style="margin-top: 15px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+                        <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; margin-bottom: 12px;">Kopiere diesen Prompt, füge ihn in ChatGPT ein und erhalte ein zufälliges Fragen-Set im JSON-Format. Sollte ChatGPT nicht sofort eine Datei erstellen, dann Frage erneut danach ("Erstelle mir daraus eine JSON-Datei"). Lade diese Datei mit dem Button weiter oben hoch.</p>
+                        <div id="promptContainer" style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border-left: 4px solid #FFB84D; position: relative;">
+                            <pre id="chatgptPrompt" style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0; white-space: pre-wrap; word-wrap: break-word; line-height: 1.4;"></pre>
+                            <button id="copyPromptBtn" style="position: absolute; top: 10px; right: 10px; padding: 8px 12px; font-size: 0.8rem; border: none; border-radius: 6px; background: #FF9500; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;">📋 Kopieren</button>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-top: 12px;">Nach dem ChatGPT-Response speichern Sie den Code als <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">.json</code> Datei und laden sie oben hoch.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+        
+        <!-- Game Container (hidden initially) -->
+        <div id="gameContainer">
+            <div class="control-bar">
+                <button id="resetBtn">Nächste Runde</button>
+                <button id="backToMenuBtn" onclick="backToMainMenu()" class="back-btn">Zurück ins Hauptmenü</button>
+            </div>
+            <div id="status">Punkte (gesamt): <span id="score">0</span> / <span id="total">10</span></div>
+            <div class="team-bar">
+            <div id="teamA" class="team-card">
+                <span class="team-name">Team A</span>
+                <span class="team-meta">Gesamt: <span id="teamAScore">0</span> | Runde: <span id="teamARound">0</span></span>
+            </div>
+            <div id="teamB" class="team-card">
+                <span class="team-name">Team B</span>
+                <span class="team-meta">Gesamt: <span id="teamBScore">0</span> | Runde: <span id="teamBRound">0</span></span>
+            </div>
+            <button id="passBtnGlobal">Aus Runde aussteigen</button>
+        </div>
+            <div id="turnLabel"></div>
+            <div id="options"></div>
+            <div id="answerPanel" class="answer-panel">
+                <h3 id="selectedCity"></h3>
+                <div class="answer-buttons">
+                    <button id="yesBtn">Ja</button>
+                    <button id="noBtn">Nein</button>
+                </div>
+            </div>
+            <div id="rankPanel" class="rank-panel">
+                <h3 id="selectedRankItem"></h3>
+                <div class="rank-buttons-row" id="rankButtonsRow"></div>
+            </div>
+            <div id="revealPanel" class="answer-panel">
+                <h3 id="revealQuestion"></h3>
+                <div id="revealAnswer" style="margin-bottom: 12px; font-weight: bold; color: #333; display: none;"></div>
+                <div id="revealInitialButtons" class="answer-buttons">
+                    <button id="revealConfirm">Antwort abgegeben</button>
+                </div>
+                <div id="revealJudgeButtons" class="answer-buttons" style="display: none;">
+                    <button id="revealCorrect">Richtig</button>
+                    <button id="revealWrong">Falsch</button>
+                </div>
+            </div>
+            <div id="message"></div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" style="display:none;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">🎉 Spiel beendet! 🎉</h2>
+            <div style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+                <h3 id="winnerText" style="color: #FF9500; font-size: 2rem; margin-bottom: 25px;"></h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+                    <div style="padding: 15px; background: #f8f8f8; border-radius: 12px; border-left: 5px solid #FF9500;">
+                        <span style="font-weight: bold; font-size: 1.2rem; color: #333;">Team A:</span>
+                        <span id="finalScoreA" style="float: right; font-size: 1.3rem; font-weight: bold; color: #FF9500;"></span>
+                    </div>
+                    <div style="padding: 15px; background: #f8f8f8; border-radius: 12px; border-left: 5px solid #FFB84D;">
+                        <span style="font-weight: bold; font-size: 1.2rem; color: #333;">Team B:</span>
+                        <span id="finalScoreB" style="float: right; font-size: 1.3rem; font-weight: bold; color: #FFB84D;"></span>
+                    </div>
+                </div>
+                <button onclick="backToMainMenu()" style="padding: 15px 35px; font-size: 1.1rem; background: #FF9500; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(255,149,0,0.3); transition: all 0.2s; width: 100%;">Zurück zum Hauptmenü</button>
+            </div>
+        </div>
+        
+        <!-- Confirm Start Modal -->
+        <div id="confirmOverlay" class="overlay">
+            <div class="modal">
+                <h3 id="confirmTitle">Set starten?</h3>
+                <div id="confirmPreview" class="preview"></div>
+                <div id="confirmList" class="list"></div>
+                <div class="buttons">
+                    <button id="confirmCancel" class="btn btn-secondary">Abbrechen</button>
+                    <button id="confirmStart" class="btn btn-primary">Starten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/web/main.js"></script>
+</body>
+</html>

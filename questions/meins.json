@@ -1,0 +1,53 @@
+{
+  "setName": "DemoSet",
+  "questions": [
+    {
+      "type": "yesno",
+      "prompt": "Ist diese Person toll?",
+      "options": [
+        {"text": "Mama", "correct": true},
+        {"text": "Papa", "correct": true},
+        {"text": "Fremder", "correct": false},
+        {"text": "Wer der haut", "correct": false},
+        {"text": "Omi", "correct": true},
+        {"text": "Opi", "correct": true},
+        {"text": "Böse", "correct": false},
+        {"text": "Oma", "correct": true},
+        {"text": "Opa", "correct": true},
+        {"text": "Stinker", "correct": false}
+      ]
+    },
+    {
+      "type": "reveal",
+      "prompt": "Welche/r Schauspieler/in spielte diese Figur?",
+      "options": [
+        { "text": "Hermine Granger", "answer": "Emma Watson" },
+        { "text": "Ethan Hunt", "answer": "Tom Cruise" },
+        { "text": "James Bond", "answer": "Daniel Craig" },
+        { "text": "Indiana Jones", "answer": "Harrison Ford" },
+        { "text": "Katniss Everdeen", "answer": "Jennifer Lawrence" },
+        { "text": "Tony Stark", "answer": "Robert Downey Jr." },
+        { "text": "Forrest Gump", "answer": "Tom Hanks" },
+        { "text": "Jack Sparrow", "answer": "Johnny Depp" },
+        { "text": "Darth Vader (Stimme)", "answer": "James Earl Jones" },
+        { "text": "Black Widow", "answer": "Scarlett Johansson" }
+      ]
+    },
+    {
+      "type": "ranking",
+      "prompt": "Wie weit von Haus entfernt. 1 wenigsten weit, 10 ist am weitesten.",
+      "items": [
+        {"text": "Haselbach Kirche", "position": 1},
+        {"text": "Oma Opa", "position": 3},
+        {"text": "Omi Opi", "position": 2},
+        {"text": "Graz", "position": 9},
+        {"text": "LA Rams Stadion", "position": 10},
+        {"text": "Wien", "position": 4},
+        {"text": "München", "position": 5},
+        {"text": "Berlin", "position": 6},
+        {"text": "London", "position": 7},
+        {"text": "Island", "position": 8}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "setName": "Filmrollen & Schauspieler",
+  "questions": [
+    {
+      "type": "reveal",
+      "prompt": "Welche/r Schauspieler/in spielte diese Figur?",
+      "options": [
+        { "text": "Hermine Granger", "answer": "Emma Watson" },
+        { "text": "Ethan Hunt", "answer": "Tom Cruise" },
+        { "text": "James Bond", "answer": "Daniel Craig" },
+        { "text": "Indiana Jones", "answer": "Harrison Ford" },
+        { "text": "Katniss Everdeen", "answer": "Jennifer Lawrence" },
+        { "text": "Tony Stark", "answer": "Robert Downey Jr." },
+        { "text": "Forrest Gump", "answer": "Tom Hanks" },
+        { "text": "Jack Sparrow", "answer": "Johnny Depp" },
+        { "text": "Darth Vader (Stimme)", "answer": "James Earl Jones" },
+        { "text": "Black Widow", "answer": "Scarlett Johansson" }
+      ]
+    }
+  ]
+}

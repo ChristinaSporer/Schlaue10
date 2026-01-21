@@ -1,0 +1,53 @@
+{
+  "setName": "Sport",
+  "questions": [
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Sportarten olympische Disziplinen? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "100m Sprint", "correct": true},
+        {"text": "Schwimmen", "correct": true},
+        {"text": "Turnen", "correct": true},
+        {"text": "Judo", "correct": true},
+        {"text": "Bogenschießen", "correct": true},
+        {"text": "American Football", "correct": false},
+        {"text": "Cricket", "correct": false},
+        {"text": "Schach", "correct": false},
+        {"text": "Darts", "correct": false},
+        {"text": "Bowling", "correct": false}
+      ]
+    },
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Sportarten Ballsportarten? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "Fußball", "correct": true},
+        {"text": "Basketball", "correct": true},
+        {"text": "Volleyball", "correct": true},
+        {"text": "Tennis", "correct": true},
+        {"text": "Handball", "correct": true},
+        {"text": "Schwimmen", "correct": false},
+        {"text": "Leichtathletik", "correct": false},
+        {"text": "Turnen", "correct": false},
+        {"text": "Judo", "correct": false},
+        {"text": "Ringen", "correct": false}
+      ]
+    },
+    {
+      "type": "ranking",
+      "prompt": "Ordne diese Läufe nach Durchschnittsgeschwindigkeit. 1 ist am langsamsten, 10 ist am schnellsten.",
+      "items": [
+        {"text": "Marathon (42km in 2h)", "position": 1},
+        {"text": "10km Lauf (30min)", "position": 2},
+        {"text": "5km Lauf (13min)", "position": 3},
+        {"text": "1500m (3:26min)", "position": 4},
+        {"text": "800m (1:41min)", "position": 5},
+        {"text": "400m (43s)", "position": 6},
+        {"text": "200m (19s)", "position": 7},
+        {"text": "100m (9.58s)", "position": 8},
+        {"text": "60m Sprint (6.34s)", "position": 9},
+        {"text": "40m Sprint (4.5s)", "position": 10}
+      ]
+    }
+  ]
+}

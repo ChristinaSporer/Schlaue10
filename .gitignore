@@ -1,0 +1,26 @@
+# Node
+node_modules/
+.vite/
+dist/
+.parcel-cache/
+
+# Rust
+target/
+
+# Build artifacts
+pkg/*.wasm
+*.wasm.d.ts
+
+# Electron
+release/
+*.exe
+*.blockmap
+
+# Artifacts/locks
+*.lock
+Cargo.lock
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+*.log

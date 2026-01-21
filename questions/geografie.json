@@ -1,0 +1,53 @@
+{
+  "setName": "Geografie",
+  "questions": [
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Städte europäisch? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "Berlin", "correct": true},
+        {"text": "Paris", "correct": true},
+        {"text": "Madrid", "correct": true},
+        {"text": "Rom", "correct": true},
+        {"text": "Wien", "correct": true},
+        {"text": "Zürich", "correct": true},
+        {"text": "London", "correct": true},
+        {"text": "New York", "correct": false},
+        {"text": "Los Angeles", "correct": false},
+        {"text": "Tokyo", "correct": false}
+      ]
+    },
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Länder in Europa? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "Frankreich", "correct": true},
+        {"text": "Spanien", "correct": true},
+        {"text": "Portugal", "correct": true},
+        {"text": "Norwegen", "correct": true},
+        {"text": "Schweden", "correct": true},
+        {"text": "Brasilien", "correct": false},
+        {"text": "Argentinien", "correct": false},
+        {"text": "Japan", "correct": false},
+        {"text": "Australien", "correct": false},
+        {"text": "Kanada", "correct": false}
+      ]
+    },
+    {
+      "type": "ranking",
+      "prompt": "Ordne diese Berge ihrer Höhe nach. 1 ist der niedrigste, 10 ist der höchste.",
+      "items": [
+        {"text": "Zugspitze (2962m)", "position": 1},
+        {"text": "Matterhorn (4478m)", "position": 2},
+        {"text": "Mont Blanc (4808m)", "position": 3},
+        {"text": "Elbrus (5642m)", "position": 4},
+        {"text": "Kilimandscharo (5895m)", "position": 5},
+        {"text": "Denali (6190m)", "position": 6},
+        {"text": "Aconcagua (6961m)", "position": 7},
+        {"text": "Cho Oyu (8188m)", "position": 8},
+        {"text": "K2 (8611m)", "position": 9},
+        {"text": "Mount Everest (8849m)", "position": 10}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "setName": "Natur & Tiere",
+  "questions": [
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Tiere Säugetiere? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "Wal", "correct": true},
+        {"text": "Hai", "correct": false},
+        {"text": "Delfin", "correct": true},
+        {"text": "Känguru", "correct": true},
+        {"text": "Krokodil", "correct": false},
+        {"text": "Pinguin", "correct": false},
+        {"text": "Fledermaus", "correct": true},
+        {"text": "Strauss", "correct": false},
+        {"text": "Koala", "correct": true},
+        {"text": "Alligator", "correct": false}
+      ]
+    },
+    {
+      "type": "yesno",
+      "prompt": "Sind die folgenden Pflanzen in Europa heimisch? Antworte mit Ja/Nein.",
+      "options": [
+        {"text": "Eiche", "correct": true},
+        {"text": "Kaktus", "correct": false},
+        {"text": "Rose", "correct": true},
+        {"text": "Orchidee", "correct": false},
+        {"text": "Tanne", "correct": true},
+        {"text": "Palme", "correct": false},
+        {"text": "Buche", "correct": true},
+        {"text": "Bambus", "correct": false},
+        {"text": "Fichte", "correct": true},
+        {"text": "Eukalyptus", "correct": false}
+      ]
+    },
+    {
+      "type": "ranking",
+      "prompt": "Ordne diese Tiere ihrer Größe nach. 1 ist das kleinste, 10 ist das größte.",
+      "items": [
+        {"text": "Ameise", "position": 1},
+        {"text": "Maus", "position": 2},
+        {"text": "Katze", "position": 3},
+        {"text": "Schaf", "position": 4},
+        {"text": "Pferd", "position": 5},
+        {"text": "Esel", "position": 6},
+        {"text": "Kuh", "position": 7},
+        {"text": "Giraffe", "position": 8},
+        {"text": "Elefant", "position": 9},
+        {"text": "Blauwal", "position": 10}
+      ]
+    }
+  ]
+}

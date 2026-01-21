@@ -1,0 +1,97 @@
+{
+  "setName": "Astronomie",
+  "questions": [
+    {
+      "type": "yesno",
+      "prompt": "Ist die Aussage korrekt?",
+      "options": [
+        {
+          "text": "Mars hat zwei Monde",
+          "correct": true
+        },
+        {
+          "text": "Die Sonne ist ein Planet",
+          "correct": false
+        },
+        {
+          "text": "Jupiter ist ein Gasriese",
+          "correct": true
+        },
+        {
+          "text": "Venus hat Ringe",
+          "correct": false
+        },
+        {
+          "text": "Neptun ist sehr kalt",
+          "correct": true
+        },
+        {
+          "text": "Merkur hat einen Mond",
+          "correct": false
+        },
+        {
+          "text": "Saturn hat ein Ringsystem",
+          "correct": true
+        },
+        {
+          "text": "Pluto ist ein Stern",
+          "correct": false
+        },
+        {
+          "text": "Licht braucht Zeit",
+          "correct": true
+        },
+        {
+          "text": "Alle Sterne sind gleich",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "ranking",
+      "prompt": "Ordne nach Entfernung zur Sonne:",
+      "items": [
+        {
+          "text": "Erde",
+          "position": 3
+        },
+        {
+          "text": "Merkur",
+          "position": 1
+        },
+        {
+          "text": "Neptun",
+          "position": 8
+        },
+        {
+          "text": "Mars",
+          "position": 4
+        },
+        {
+          "text": "Saturn",
+          "position": 6
+        },
+        {
+          "text": "Venus",
+          "position": 2
+        },
+        {
+          "text": "Uranus",
+          "position": 7
+        },
+        {
+          "text": "Jupiter",
+          "position": 5
+        },
+        {
+          "text": "Zwergplanet Pluto",
+          "position": 9
+        },
+        {
+          "text": "Kuipergürtel",
+          "position": 10
+        }
+      ]
+    }
+  ]
+}

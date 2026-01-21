@@ -1,0 +1,40 @@
+{
+  "name": "smart10spiel-wasm",
+  "version": "0.1.0",
+  "description": "A WebAssembly game project using Rust and wasm-pack.",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "wasm-pack build --target web && vite build",
+    "build:wasm": "wasm-pack build --target web .",
+    "build:web": "vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "electron:build": "npm run build && electron-builder",
+    "electron:build:win": "npm run build && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.smart10spiel.app",
+    "productName": "Smart10 Quiz",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "asarUnpack": [
+      "dist/questions/**/*"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0",
+    "vite": "^5.0.0"
+  }
+}
