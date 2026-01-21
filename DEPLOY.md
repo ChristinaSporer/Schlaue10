@@ -7,20 +7,20 @@
 ```powershell
 git init
 git add .
-git commit -m "Initial commit: Smart10 Quiz Game"
+git commit -m "Initial commit: Schlaue10 Quiz Game"
 ```
 
 ### 2. GitHub Repository erstellen
 
 1. Gehe zu [github.com](https://github.com) und erstelle ein neues Repository
-2. Name: z.B. `Smart10Spiel` (oder einen anderen Namen)
+2. Name: z.B. `Schlaue10` (oder einen anderen Namen)
 3. **Wichtig**: Repository auf **Public** setzen (GitHub Pages ist für private Repos kostenpflichtig)
 4. Keine README, .gitignore oder License hinzufügen (existieren bereits lokal)
 
 ### 3. Repository mit GitHub verbinden
 
 ```powershell
-git remote add origin https://github.com/DEIN-USERNAME/Smart10Spiel.git
+git remote add origin https://github.com/DEIN-USERNAME/Schlaue10.git
 git branch -M main
 git push -u origin main
 ```
@@ -42,7 +42,7 @@ Der Workflow startet automatisch nach dem Push. Du kannst den Status sehen unter
 
 Nach erfolgreichem Deployment ist die App verfügbar unter:
 ```
-https://DEIN-USERNAME.github.io/Smart10Spiel/
+https://DEIN-USERNAME.github.io/Schlaue10/
 ```
 
 ## Aktualisierungen veröffentlichen

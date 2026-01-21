@@ -1,4 +1,4 @@
-import init, { init_empty_game, new_round, prompt, options_len, option_text, has_answered, answer, score, is_completed, correct_answer_is_yes, team_score, team_round_score, team_active, current_team_index, current_team_name, resign_current_team, question_type, ranking_items_len, ranking_item_text, ranking_correct_position, set_ranking_position, submit_ranking, load_yesno_question, add_yesno_option, load_ranking_question, add_ranking_item, next_question_from_json, reveal_items_len, reveal_item_text, reveal_item_answer, load_reveal_question, add_reveal_option, mark_reveal } from "../pkg/smart10spiel.js";
+import init, { init_empty_game, new_round, prompt, options_len, option_text, has_answered, answer, score, is_completed, correct_answer_is_yes, team_score, team_round_score, team_active, current_team_index, current_team_name, resign_current_team, question_type, ranking_items_len, ranking_item_text, ranking_correct_position, set_ranking_position, submit_ranking, load_yesno_question, add_yesno_option, load_ranking_question, add_ranking_item, next_question_from_json, reveal_items_len, reveal_item_text, reveal_item_answer, load_reveal_question, add_reveal_option, mark_reveal } from "../pkg/schlaue10.js";
 
 let selectedIndex = -1;
 let selectedRankIndex = -1;
@@ -418,7 +418,7 @@ async function run() {
   await loadQuestionSets();
   
   // Initialize ChatGPT Prompt
-  const prompt = `Generiere ein zufälliges Smart10 Quiz Set mit genau 10 Fragen im JSON-Format. Das Set soll folgende Struktur haben:
+  const prompt = `Generiere ein zufälliges Schlaue10 Quiz Set mit genau 10 Fragen im JSON-Format. Das Set soll folgende Struktur haben:
 
 {
   "setName": "Thema Name (z.B. Geographie, Geschichte, Wissenschaft)",

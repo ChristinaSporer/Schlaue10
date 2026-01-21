@@ -1,5 +1,5 @@
 {
-  "name": "smart10spiel-wasm",
+  "name": "schlaue10-wasm",
   "version": "0.1.0",
   "description": "A WebAssembly game project using Rust and wasm-pack.",
   "main": "electron/main.js",
@@ -15,8 +15,8 @@
     "electron:build:win": "npm run build && electron-builder --win"
   },
   "build": {
-    "appId": "com.smart10spiel.app",
-    "productName": "Smart10 Quiz",
+    "appId": "com.schlaue10.app",
+    "productName": "Schlaue10 Quiz",
     "directories": {
       "output": "release"
     },

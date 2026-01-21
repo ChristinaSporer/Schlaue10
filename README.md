@@ -1,4 +1,4 @@
-# Smart10Spiel WebAssembly Game
+# Schlaue10 WebAssembly Game
 
 Dieses Projekt verwendet Rust und wasm-pack, um ein Spiel mit WebAssembly zu erstellen.
 
@@ -18,7 +18,7 @@ Dieses Projekt verwendet Rust und wasm-pack, um ein Spiel mit WebAssembly zu ers
 - `npm run build` führt beides aus: WASM bauen und anschließend das Web bauen
 - `npm run preview` startet einen lokalen Preview-Server für das gebaute Frontend
 
-## Spiel: Smart10-ähnliches Quiz
+## Spiel: Schlaue10-ähnliches Quiz
 - Sets werden automatisch per `import.meta.glob()` aus dem Ordner `questions/` geladen (JSON-Dateien). Eigene Sets können dort abgelegt oder zur Laufzeit hochgeladen werden.
 - Drei Fragetypen werden unterstützt: Yes/No, Ranking und Reveal (mit 2‑Schritt‑Flow).
 

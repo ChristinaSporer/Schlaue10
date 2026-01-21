@@ -1,4 +1,4 @@
-# Copilot Instructions for Smart10Spiel
+# Copilot Instructions for Schlaue10
 
 - [x] Clarify Project Requirements: WebAssembly game using Rust and wasm-pack
 - [x] Scaffold the Project: Initialized Rust and npm project structure

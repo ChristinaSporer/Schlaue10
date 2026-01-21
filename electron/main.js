@@ -12,7 +12,7 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js')
     },
     icon: path.join(__dirname, '../build/icon.png'),
-    title: 'Smart10 Quiz'
+    title: 'Schlaue10 Quiz'
   });
 
   // Load the built app
